@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Perform necessary occi-cli removal steps
+# after package is uninstalled.
+#
+
+echo "Occi-cli has been uninstalled!"
+
+exit 0
