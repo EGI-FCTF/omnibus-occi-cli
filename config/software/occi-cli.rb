@@ -3,6 +3,7 @@ version "4.2.0.beta.13"
 
 dependency "ruby"
 dependency "rubygems"
+dependency "nokogiri"
 
 build do
   gem "install occi-cli -n #{install_dir}/bin --no-rdoc --no-ri -v #{version}"

@@ -25,9 +25,14 @@ build do
        "nokogiri",
        "-v #{version}",
        "--",
+       "--disable-static",
+       "--use-system-libraries",
        "--with-zlib-dir=#{install_dir}/embedded/lib",
        "--with-lzma-dir=#{install_dir}/embedded/lib",
        "--with-xml2-dir=#{install_dir}/embedded/lib",
        "--with-xslt-dir=#{install_dir}/embedded/lib",
+       "--with-exslt-dir=#{install_dir}/embedded/lib",
        "--with-iconv-dir=#{install_dir}/embedded/lib"].join(" ")
+  command "rm -rf /opt/occi-cli/embedded/lib/ruby/gems/1.9.1/gems/nokogiri-1.6.1/ext/nokogiri/tmp"
+  command "rm -rf /opt/occi-cli/embedded/lib/ruby/gems/1.9.1/gems/nokogiri-1.6.1/ports"
 end

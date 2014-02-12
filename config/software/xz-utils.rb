@@ -34,35 +34,11 @@ configure_env =
       "CC" => "xlc -q64",
       "CXX" => "xlC -q64",
       "LD" => "ld -b64",
-      "CFLAGS" => "-q64 -I#{install_dir}/embedded/include -O",
       "OBJECT_MODE" => "64",
       "ARFLAGS" => "-X64 cru",
-      "LDFLAGS" => "-q64 -L#{install_dir}/embedded/lib -Wl,-blibpath:#{install_dir}/embedded/lib:/usr/lib:/lib",
     }
-  when "mac_os_x"
-    {
-      "LDFLAGS" => "-R#{install_dir}/embedded/lib -L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-      "CFLAGS" => "-I#{install_dir}/embedded/include -L#{install_dir}/embedded/lib"
-    }
-  when "solaris2"
-    if Omnibus.config.solaris_compiler == "studio"
-    {
-      "LDFLAGS" => "-R#{install_dir}/embedded/lib -L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -static-libgcc",
-      "CFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -DNO_VIZ"
-    }
-    elsif Omnibus.config.solaris_compiler == "gcc"
-    {
-      "LDFLAGS" => "-R#{install_dir}/embedded/lib -L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-      "CFLAGS" => "-I#{install_dir}/embedded/include -L#{install_dir}/embedded/lib -DNO_VIZ"
-    }
-    else
-      raise "Sorry, #{Omnibus.config.solaris_compiler} is not a valid compiler selection."
-    end
   else
-    {
-      "LDFLAGS" => "-Wl,-rpath #{install_dir}/embedded/lib -L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-      "CFLAGS" => "-I#{install_dir}/embedded/include -L#{install_dir}/embedded/lib"
-    }
+    {}
   end
 
 build do
