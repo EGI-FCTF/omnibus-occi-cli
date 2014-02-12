@@ -42,7 +42,7 @@ configure_env =
   end
 
 build do
-  command "./autogen.sh"
+  command "autoreconf -fi"
   command "./configure --prefix=#{install_dir}/embedded", :env => configure_env
   command "make -j #{max_build_jobs}"
   command "make -j #{max_build_jobs} install"
