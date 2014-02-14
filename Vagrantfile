@@ -19,6 +19,9 @@ Vagrant.configure("2") do |config|
     c.berkshelf.berksfile_path = "./Berksfile"
     c.vm.box = "opscode-ubuntu-12.04"
     c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.4.box"
+    c.vm.provision :shell, :inline => <<-AUTOPOINT
+      apt-get -y install darcs autoconf automake gettext libtool zip autopoint
+    AUTOPOINT
   end
 
   config.vm.define 'centos-6' do |c|
