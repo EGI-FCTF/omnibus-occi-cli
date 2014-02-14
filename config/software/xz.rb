@@ -15,18 +15,15 @@
 # limitations under the License.
 #
 
-name "xz-utils"
-version "5.1.1alpha+20120614"
+name "xz"
+version "5.0.5"
 
 dependency "libgcc"
 
-# TODO: this link is subject to change with each new release of zlib.
-#       we'll need to use a more robust link (sourceforge) that will
-#       not change over time.
-source :url => "http://ftp.de.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.1.1alpha+20120614.orig.tar.gz",
-       :md5 => "4827c3ea0638c6a3e8bafb77793fdc98"
+source :url => "http://tukaani.org/xz/xz-5.0.5.tar.gz",
+       :md5 => "19d924e066b6fff0bc9d1981b4e53196"
 
-relative_path "xz-utils-5.1.1alpha+20120614"
+relative_path "xz-5.0.5"
 configure_env =
   case platform
   when "aix"

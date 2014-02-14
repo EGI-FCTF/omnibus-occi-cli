@@ -18,7 +18,7 @@
 name "nokogiri"
 version "1.6.1"
 
-dependencies ["ruby", "rubygems", "libxml2", "libxslt", "libiconv", "zlib", "xz-utils"]
+dependencies ["ruby", "rubygems", "libxml2", "libxslt", "libiconv", "zlib", "xz"]
 
 build do
   gem ["install",
