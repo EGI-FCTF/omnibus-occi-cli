@@ -19,9 +19,12 @@ Vagrant.configure("2") do |config|
     c.berkshelf.berksfile_path = "./Berksfile"
     c.vm.box = "opscode-ubuntu-12.04"
     c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_chef-11.4.4.box"
-    c.vm.provision :shell, :inline => <<-AUTOPOINT
-      apt-get -y install darcs autoconf automake gettext libtool zip autopoint
-    AUTOPOINT
+  end
+
+  config.vm.define 'ubuntu-13.04' do |c|
+    c.berkshelf.berksfile_path = "./Berksfile"
+    c.vm.box = "opscode-ubuntu-13.04"
+    c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box"
   end
 
   config.vm.define 'centos-6' do |c|
@@ -33,7 +36,7 @@ Vagrant.configure("2") do |config|
   config.vm.define 'debian-7' do |c|
     c.berkshelf.berksfile_path = "./Berksfile"
     c.vm.box = "opscode-debian-7.0"
-    c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_debian-7.0.0_chef-11.4.4.box"
+    c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_debian-7.0.0_provisionerless.box"
   end
 
   config.vm.provider :virtualbox do |vb|
