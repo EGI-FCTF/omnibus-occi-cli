@@ -1,5 +1,5 @@
 name "occi-cli"
-version "4.2.0.beta.17"
+version "4.2.0"
 
 dependency "ruby"
 dependency "rubygems"
