@@ -4,8 +4,8 @@ homepage "https://github.com/gwdg/rOCCI-cli"
 
 replaces        "occi-cli"
 install_path    "/opt/occi-cli"
-build_version   "4.2.0.rc1"
-build_iteration 1
+build_version   "4.2.0"
+build_iteration 2
 
 # creates required build directories
 dependency "preparation"
