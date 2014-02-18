@@ -43,6 +43,26 @@ the package cache directory (`/var/cache/omnibus/pkg`):
 $ omnibus clean occi-cli --purge
 ```
 
+### BuildLab
+
+* [VirtualBox 4.3+](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant 1.4+](http://www.vagrantup.com/downloads.html)
+
+```shell
+$ vagrant plugin install vagrant-berkshelf
+$ vagrant plugin install vagrant-omnibus
+```
+
+To build packages for all platforms:
+```shell
+vagrant up
+```
+
+To build package for a specific platform:
+```shell
+vagrant up PLATFORM
+```
+
 ### Help
 
 Full help for the Omnibus command line interface can be accessed with the
