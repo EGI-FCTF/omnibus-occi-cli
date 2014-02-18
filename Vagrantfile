@@ -33,11 +33,11 @@ Vagrant.configure("2") do |config|
     c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.4_chef-11.4.4.box"
   end
 
-#  config.vm.define 'debian-7' do |c|
-#    c.berkshelf.berksfile_path = "./Berksfile"
-#    c.vm.box = "opscode-debian-7.0"
-#    c.vm.box_url = "http://opscode-vm.s3.amazonaws.com/vagrant/opscode_debian-7.0.0_provisionerless.box"
-#  end
+  config.vm.define 'debian-7' do |c|
+    c.berkshelf.berksfile_path = "./Berksfile"
+    c.vm.box = "vb-fbr-debian-7.0"
+    c.vm.box_url = "http://vagrantboxes.footballradar.com/wheezy64.box"
+  end
 
   config.vm.provider :virtualbox do |vb|
     vb.customize [
