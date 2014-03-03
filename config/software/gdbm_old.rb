@@ -16,14 +16,16 @@
 #
 
 name "gdbm_old"
-version "1.8.3"
+default_version "1.8.3"
 
 dependency "libgcc"
 
-source :url => 'https://github.com/arax/omnibus-occi-cli/raw/master/files/gdbm-1.8.3.tar.gz',
-       :md5 => '69be333553e31f3e23b4d05c9795599e'
+version "1.8.3" do
+  source :url => 'https://github.com/arax/omnibus-occi-cli/raw/master/files/gdbm-1.8.3.tar.gz',
+         :md5 => '69be333553e31f3e23b4d05c9795599e'
+end
 
-relative_path "gdbm-1.8.3"
+relative_path "gdbm-#{version}"
 
 build do
   configure_command = ["./configure",

@@ -1,3 +1,3 @@
 site :opscode
 
-cookbook "omnibus"
+cookbook "omnibus", git: "https://github.com/arax/omnibus.git"

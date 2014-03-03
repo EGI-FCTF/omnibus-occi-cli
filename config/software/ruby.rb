@@ -16,7 +16,7 @@
 #
 
 name "ruby"
-version "1.9.3-p484"
+default_version "1.9.3-p484"
 
 dependency "zlib"
 dependency "ncurses"
@@ -28,8 +28,10 @@ dependency "gdbm" #if (platform == "mac_os_x" or platform == "freebsd" or platfo
 dependency "gdbm_old"
 dependency "libgcc" if (platform == "solaris2" and Omnibus.config.solaris_compiler == "gcc")
 
-source :url => "http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-#{version}.tar.gz",
-       :md5 => '8ac0dee72fe12d75c8b2d0ef5d0c2968'
+version "1.9.3-p484" do
+  source :url => "http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz",
+         :md5 => '8ac0dee72fe12d75c8b2d0ef5d0c2968'
+end
 
 relative_path "ruby-#{version}"
 
