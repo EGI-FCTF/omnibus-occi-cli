@@ -9,7 +9,7 @@
       "locked_version": "1.9.2"
     },
     "build-essential": {
-      "locked_version": "1.4.2"
+      "locked_version": "1.4.4"
     },
     "git": {
       "locked_version": "3.0.0"
