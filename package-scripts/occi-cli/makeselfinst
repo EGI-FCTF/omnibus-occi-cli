@@ -22,6 +22,9 @@ mkdir -p $DEST_DIR || error_exit "Cannot create $DEST_DIR"
 cp -R $INSTALLER_DIR $DEST_DIR || error_exit "Cannot install to $DEST_DIR"
 rm -f $DEST_DIR/$PROGNAME
 
+# chown
+chown -R root:root $DEST_DIR || error_exit "Cannot chown $DEST_DIR to root:root"
+
 # You may want to symlink your packages bin files into /usr/local/bin
 mkdir -p $BIN_DIR || error_exit "Cannot create $BIN_DIR"
 ln -sf $DEST_DIR/bin/occi $BIN_DIR || error_exit "Cannot link $DEST_DIR/bin/occi to $BIN_DIR"
