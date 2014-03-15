@@ -4,6 +4,23 @@
 # after package is uninstalled.
 #
 
-echo "Occi-cli has been uninstalled!"
+PROGNAME=`basename $0`
+INSTALLER_DIR=`dirname $0`
+DEST_DIR=/opt/occi-cli
+CONFIG_DIR=/etc/occi-cli
+BIN_DIR=/usr/local/bin
+USAGE="usage: $0"
+
+function error_exit
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+if [ -L "$BIN_DIR/occi" ]; then
+  rm $BIN_DIR/occi
+fi
+
+echo "occi-cli has been uninstalled!"
 
 exit 0
