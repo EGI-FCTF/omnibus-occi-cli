@@ -4,7 +4,7 @@ homepage "https://github.com/EGI-FCTF/rOCCI-cli"
 
 replaces        "occi-cli"
 install_path    "/opt/occi-cli"
-build_version   "4.3.0.beta.1"
+build_version   "4.3.0.beta.2"
 build_iteration 1
 
 # creates required build directories
