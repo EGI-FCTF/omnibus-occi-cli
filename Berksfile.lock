@@ -1,57 +1,27 @@
-{
-  "sources": {
-    "omnibus": {
-      "locked_version": "1.2.4",
-      "git": "https://github.com/arax/omnibus.git",
-      "ref": "f924def9f68e3e2865b4c63e07871238ce4c34f3"
-    },
-    "apt": {
-      "locked_version": "1.9.2"
-    },
-    "build-essential": {
-      "locked_version": "1.4.4"
-    },
-    "git": {
-      "locked_version": "3.0.0"
-    },
-    "dmg": {
-      "locked_version": "2.2.0"
-    },
-    "windows": {
-      "locked_version": "1.30.0"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.5"
-    },
-    "runit": {
-      "locked_version": "1.5.8"
-    },
-    "yum": {
-      "locked_version": "3.1.2"
-    },
-    "yum-epel": {
-      "locked_version": "0.3.4"
-    },
-    "homebrew": {
-      "locked_version": "1.5.4"
-    },
-    "pkgin": {
-      "locked_version": "0.4.0"
-    },
-    "pkgutil": {
-      "locked_version": "0.0.3"
-    },
-    "rbenv": {
-      "locked_version": "1.6.5"
-    },
-    "ohai": {
-      "locked_version": "2.0.0"
-    },
-    "wix": {
-      "locked_version": "1.1.0"
-    },
-    "7-zip": {
-      "locked_version": "1.0.2"
-    }
-  }
-}
+DEPENDENCIES
+  apt (~> 2.0)
+  omnibus
+
+GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.6.0)
+  build-essential (2.0.6)
+  chef-sugar (2.3.0)
+  chef_handler (1.1.6)
+  homebrew (1.9.0)
+  omnibus (2.3.4)
+    7-zip (~> 1.0)
+    build-essential (~> 2.0)
+    chef-sugar (~> 2.0)
+    homebrew (~> 1.5)
+    windows (~> 1.30)
+    wix (~> 1.1)
+    yum-epel (~> 0.4)
+  windows (1.34.6)
+    chef_handler (>= 0.0.0)
+  wix (1.1.0)
+    windows (>= 1.2.2)
+  yum (3.3.2)
+  yum-epel (0.5.1)
+    yum (~> 3.0)

@@ -2,19 +2,21 @@ name "occi-cli"
 maintainer "parak@cesnet.cz"
 homepage "https://github.com/EGI-FCTF/rOCCI-cli"
 
-replaces        "occi-cli"
-install_path    "/opt/occi-cli"
-build_version   "4.3.0.beta.2"
+install_dir     '/opt/occi-cli'
+build_version   "4.3.0.beta.3"
 build_iteration 1
 
-# creates required build directories
-dependency "preparation"
+override :rubygems, :version => '2.4.1'
+override :ruby, :version => '2.1.3'
 
-# version manifest file
-dependency "version-manifest"
+# creates required build directories
+dependency 'preparation'
 
 # occi-cli dependencies/components
-dependency "occi-cli"
+dependency 'occi-cli'
 
-exclude "\.git*"
-exclude "bundler\/git"
+# version manifest file
+dependency 'version-manifest'
+
+exclude '\.git*'
+exclude 'bundler\/git'
