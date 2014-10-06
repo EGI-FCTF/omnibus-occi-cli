@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Perform necessary occi-cli setup steps
+# after package is installed.
+#
+
+PROGNAME=`basename $0`
+INSTALLER_DIR=`dirname $0`
+DEST_DIR=/opt/occi-cli
+CONFIG_DIR=/etc/occi-cli
+BIN_DIR=/usr/local/bin
+USAGE="usage: $0"
+
+function error_exit
+{
+  echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
+  exit 1
+}
+
+# chown
+chown -R root:root $DEST_DIR || error_exit "Cannot chown $DEST_DIR to root:root"
+
+# You may want to symlink your packages bin files into /usr/local/bin
+mkdir -p $BIN_DIR || error_exit "Cannot create $BIN_DIR"
+ln -sf $DEST_DIR/bin/occi $BIN_DIR || error_exit "Cannot link $DEST_DIR/bin/occi to $BIN_DIR"
+
+echo "Thank you for installing occi-cli!"
+
+exit 0
