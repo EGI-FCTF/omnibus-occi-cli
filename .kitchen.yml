@@ -18,6 +18,10 @@ platforms:
     run_list: apt::default
   - name: centos-5.10
   - name: centos-6.5
+  - name: debian-7.6
+    run_list: apt::default
+  - name: debian-6.0.10
+    run_list: apt::default
 
 suites:
   - name: default
