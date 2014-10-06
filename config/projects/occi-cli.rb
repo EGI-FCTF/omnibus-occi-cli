@@ -3,7 +3,7 @@ maintainer "parak@cesnet.cz"
 homepage "https://github.com/EGI-FCTF/rOCCI-cli"
 
 install_dir     '/opt/occi-cli'
-build_version   "4.3.0.beta.2"
+build_version   "4.3.0.beta.3"
 build_iteration 1
 
 override :rubygems, :version => '2.4.1'
