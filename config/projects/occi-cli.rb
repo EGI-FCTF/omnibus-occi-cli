@@ -2,7 +2,9 @@ name "occi-cli"
 maintainer "parak@cesnet.cz"
 homepage "https://github.com/EGI-FCTF/rOCCI-cli"
 
-install_dir     '/opt/occi-cli'
+# Defaults to C:/occi-server on Windows
+# and /opt/occi-server on all other platforms
+install_dir     "#{default_root}/#{name}"
 build_version   "4.3.0.beta.3"
 build_iteration 1
 
