@@ -8,7 +8,7 @@ PROGNAME=`basename $0`
 INSTALLER_DIR=`dirname $0`
 DEST_DIR=/opt/occi-cli
 CONFIG_DIR=/etc/occi-cli
-BIN_DIR=/usr/local/bin
+BIN_DIR=/usr/bin
 USAGE="usage: $0"
 
 function error_exit
@@ -20,7 +20,7 @@ function error_exit
 # chown
 chown -R root:root $DEST_DIR || error_exit "Cannot chown $DEST_DIR to root:root"
 
-# You may want to symlink your packages bin files into /usr/local/bin
+# symlink bin files into /usr/bin
 mkdir -p $BIN_DIR || error_exit "Cannot create $BIN_DIR"
 ln -sf $DEST_DIR/bin/occi $BIN_DIR || error_exit "Cannot link $DEST_DIR/bin/occi to $BIN_DIR"
 
