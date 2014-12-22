@@ -17,6 +17,11 @@ function error_exit
   exit 1
 }
 
+if [ "X$1" = "Xupgrade" ] || [ "X$1" = "X1" ]; then
+  echo "Skipping clean-up, this is an upgrade!"
+  exit 0
+fi
+
 if [ -L "$BIN_DIR/occi" ]; then
   rm $BIN_DIR/occi
 fi
