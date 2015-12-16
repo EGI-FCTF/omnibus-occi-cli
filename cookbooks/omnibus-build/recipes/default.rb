@@ -8,13 +8,14 @@ bash 'run_omnibus_build' do
   group 'omnibus'
   environment build_env
 
-  pkg_dir = "#{work_dir}/packages/#{node[:platform]}-#{node[:platform_version]}"
+  platform_string = "#{node[:platform]}-#{node[:platform_version]}"
+  pkg_dir = "#{work_dir}/packages/#{platform_string}"
   cwd work_dir
   timeout 7200
 
   code <<-EOC
-    export PATH="/opt/languages/ruby/2.1.5/bin:$PATH"
-    bundle install --binstubs --path vendor/bundle
+    source /home/#{user}/load-omnibus-toolchain.sh
+    bundle install --binstubs --path vendor/bundle-#{platform_string}
     bundle exec omnibus build #{project_name}
 
     if [ $? -eq 0 ]; then
@@ -22,6 +23,7 @@ bash 'run_omnibus_build' do
       cp #{work_dir}/pkg/* #{pkg_dir}
       rm -r #{work_dir}/pkg
       rm -r #{work_dir}/.bundle
+      rm -r #{work_dir}/vendor/bundle-#{platform_string}
     else
       exit 125
     fi
