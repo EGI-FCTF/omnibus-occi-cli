@@ -6,7 +6,7 @@ description "An OCCI client library & tools for working with OCCI-enabled clouds
 # Defaults to C:/occi-server on Windows
 # and /opt/occi-server on all other platforms
 install_dir     "#{default_root}/#{name}"
-build_version   "4.3.3"
+build_version   "4.3.4"
 build_iteration 1
 
 override :rubygems, :version => '2.4.4'

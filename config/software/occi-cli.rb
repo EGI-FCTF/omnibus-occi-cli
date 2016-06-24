@@ -1,5 +1,5 @@
 name "occi-cli"
-default_version "4.3.3"
+default_version "4.3.4"
 
 dependency "ruby"
 dependency "rubygems"
