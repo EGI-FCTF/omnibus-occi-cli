@@ -7,7 +7,7 @@ description "An OCCI client library & tools for working with OCCI-enabled clouds
 # and /opt/occi-server on all other platforms
 install_dir     "#{default_root}/#{name}"
 build_version   "4.3.10"
-build_iteration 1
+build_iteration 2
 
 override :rubygems, :version => '2.4.8'
 override :ruby, :version => '2.1.9'
